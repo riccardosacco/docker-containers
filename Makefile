@@ -34,3 +34,11 @@ postgres:
 	-e PGADMIN_DEFAULT_EMAIL=admin@admin.com \
 	-e PGADMIN_DEFAULT_PASSWORD=admin \
 	-d dpage/pgadmin4 \
+
+swagger-editor:
+	docker pull swaggerapi/swagger-editor && \
+	docker run --name swagger-editor -d -p 81:8080 swaggerapi/swagger-editor
+
+swagger-ui:
+	docker pull swaggerapi/swagger-ui && \
+	docker run --name swagger-ui -d -p 82:8080 swaggerapi/swagger-ui
