@@ -19,6 +19,12 @@ redis:
 	-p 6379:6379 \
 	-d redis
 
+rabbit:
+	docker run --name rabbit \
+	-p 5672:5672 \
+	-p 15672:15672 \
+	-d rabbitmq:3-management
+
 postgres:
 	docker network create --driver bridge pgnetwork || true && \
 	docker run --name postgres \
