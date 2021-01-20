@@ -48,3 +48,8 @@ swagger-editor:
 swagger-ui:
 	docker pull swaggerapi/swagger-ui && \
 	docker run --name swagger-ui -d -p 82:8080 swaggerapi/swagger-ui
+
+grafana:
+	docker run --name grafana \
+	-p 3000:3000 \
+  -d grafana/grafana
