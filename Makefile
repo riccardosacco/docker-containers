@@ -2,12 +2,14 @@ mysql:
 	docker run --name mysql \
 	-p 3306:3306 \
 	-e MYSQL_ROOT_PASSWORD=admin \
-	-d mysql \
-	&& \
+	-d mysql
+
+phpmyadmin:
 	docker run --name phpmyadmin \
 	-p 8081:80 -d \
 	--link mysql:db \
-	phpmyadmin/phpmyadmin
+	-e UPLOAD_LIMIT=1024M \
+	phpmyadmin/phpmyadmin \
 
 mongo:
 	docker run --name mongo \
