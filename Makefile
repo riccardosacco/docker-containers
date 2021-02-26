@@ -2,12 +2,14 @@ mysql:
 	docker run --name mysql \
 	-p 3306:3306 \
 	-e MYSQL_ROOT_PASSWORD=admin \
-	-d mysql \
-	&& \
+	-d mysql
+
+phpmyadmin:
 	docker run --name phpmyadmin \
 	-p 8081:80 -d \
 	--link mysql:db \
-	phpmyadmin/phpmyadmin:latest
+	-e UPLOAD_LIMIT=1024M \
+	phpmyadmin/phpmyadmin:latest \
 
 mongo:
 	docker run --name mongo \
@@ -48,3 +50,8 @@ swagger-editor:
 swagger-ui:
 	docker pull swaggerapi/swagger-ui && \
 	docker run --name swagger-ui -d -p 82:8080 swaggerapi/swagger-ui
+
+grafana:
+	docker run --name grafana \
+	-p 3000:3000 \
+  -d grafana/grafana
