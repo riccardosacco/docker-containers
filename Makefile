@@ -7,7 +7,7 @@ mysql:
 	docker run --name phpmyadmin \
 	-p 8081:80 -d \
 	--link mysql:db \
-	phpmyadmin/phpmyadmin
+	phpmyadmin/phpmyadmin:latest
 
 mongo:
 	docker run --name mongo \
