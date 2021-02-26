@@ -9,7 +9,7 @@ phpmyadmin:
 	-p 8081:80 -d \
 	--link mysql:db \
 	-e UPLOAD_LIMIT=1024M \
-	phpmyadmin/phpmyadmin:latest \
+	phpmyadmin:latest \
 
 mongo:
 	docker run --name mongo \
