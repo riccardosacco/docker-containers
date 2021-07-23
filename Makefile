@@ -55,3 +55,9 @@ grafana:
 	docker run --name grafana \
 	-p 3000:3000 \
   -d grafana/grafana
+
+keycloak:
+	docker run --name keycloak \
+	-p 8080:8080 \
+	-e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin \
+	-d quay.io/keycloak/keycloak:14.0.0
